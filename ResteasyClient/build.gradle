@@ -1,0 +1,22 @@
+group 'de.abas.mw.client'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.13.Final'
+    compile 'org.jboss.resteasy:resteasy-client:3.0.13.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.13.Final'
+    compile 'org.jboss.resteasy:resteasy-jackson2-provider:3.0.13.Final'
+	compile 'com.jayway.jsonpath:json-path:2.0.0'
+    compile fileTree(dir: rootProject.file('lib'), include: 'de.abas.mw.model-0.28.0-SNAPSHOT.jar')
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

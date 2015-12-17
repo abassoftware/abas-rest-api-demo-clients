@@ -1,0 +1,6 @@
+rootProject.name = 'middleware-demo-clients'
+
+include 'GroovyRESTClient'
+include 'RestAssuredClient'
+include 'ResteasyClient'
+
