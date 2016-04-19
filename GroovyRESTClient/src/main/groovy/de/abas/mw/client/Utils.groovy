@@ -7,11 +7,11 @@ import groovyx.net.http.RESTClient
 class Utils {
 
 	public static RESTClient createClient() {
-		RESTClient restClient = new RESTClient(System.getProperty("baseUrl", "http://localhost:8080/mw/r/test/"))
-		restClient.auth.basic("", System.getProperty("password", "verkauf"))
+		RESTClient restClient = new RESTClient(System.getProperty("baseUrl", "http://localhost:8080/mw/r/roh@vm-crest/"))
+		restClient.auth.basic("", System.getProperty("password", "sy"))
 		restClient.encoder.'application/abas.objects+json' = restClient.encoder.'application/json'
 		restClient.parser.'application/abas.objects+json' = restClient.parser.'application/json'
-		restClient.headers['Accept-Language'] = 'en'
+		restClient.headers['Accept-Language'] = 'de'
 		if (Boolean.getBoolean("edpLog")) {
 			restClient.headers['X-abas-mw-edp-log-level'] = "INFO"
 		}

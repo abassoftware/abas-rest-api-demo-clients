@@ -10,11 +10,12 @@ class CreateOpportunity {
 		RESTClient restClient = Utils.createClient()
 
 		def editorLocation = createEditor(restClient)
+		println "editorLocacion: ${editorLocation}"
 		try {
 			fillFields(restClient, editorLocation)
 			def links = commitEditor(restClient, editorLocation)
-			def latestVersionLocation = links.find { it.rel == "latest-version" }.href
-			closeWorkingSet(restClient, links.find { it.rel == "urn:abas:rel:workingSet:CLOSE" }.href)
+			def latestVersionLocation = links.'latest-version'[0].href
+			closeWorkingSet(restClient, links.'urn:abas:rel:workingSet:CLOSE'[0].href)
 
 			println ""
 			println "Location: ${latestVersionLocation}"
@@ -44,8 +45,8 @@ class CreateOpportunity {
 						[ _type: "SetFieldValue", fieldName: "kunde", value: "70001"],
 						[ _type: "SetFieldValue", fieldName: "tterm", value: "+14"],
 						[ _type: "InsertRow", rowSpec: "0" ],
-						[ _type: "SetFieldValue",rowSpec: ".", fieldName: "artex", value: "30010"],
-						[ _type: "SetFieldValue",rowSpec: ".", fieldName: "mgex", value: "2"],
+						[ _type: "SetFieldValue",rowSpec: ".", fieldName: "artikel", value: "0-C"],
+						[ _type: "SetFieldValue",rowSpec: ".", fieldName: "mge", value: "2"],
 					]
 				]
 				)
@@ -55,7 +56,7 @@ class CreateOpportunity {
 		}
 	}
 
-	private static List commitEditor(RESTClient restClient, String editorLocation) {
+	private static Map commitEditor(RESTClient restClient, String editorLocation) {
 		HttpResponseDecorator response = restClient.post(
 				path:editorLocation,
 				query:[:],
@@ -74,9 +75,9 @@ class CreateOpportunity {
 
 	private static void cancelWorkingSetOfEditor(RESTClient restClient,String editorLocation) {
 		def editorLinks = restClient.get(path:editorLocation).data.content.data.links
-		def workingSetLocation = editorLinks.find {it.rel == "up"}.href
+		def workingSetLocation = editorLinks.up[0].href
 		def workingSetLinks = restClient.get(path:workingSetLocation ).data.content.data.links
-		def cancelLocation = workingSetLinks.find { it.rel == "urn:abas:rel:workingSet:CANCEL" }.href
+		def cancelLocation = workingSetLinks.'urn:abas:rel:workingSet:CANCEL'[0].href
 		restClient.post(path:cancelLocation)
 	}
 
