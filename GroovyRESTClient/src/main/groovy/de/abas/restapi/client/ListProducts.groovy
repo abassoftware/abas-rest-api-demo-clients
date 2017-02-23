@@ -1,4 +1,4 @@
-package de.abas.mw.client
+package de.abas.restapi.client
 
 import groovyx.net.http.HttpResponseDecorator
 import groovyx.net.http.RESTClient;

@@ -1,3 +1,16 @@
-group 'de.abas.mw.client'
+apply plugin: 'eclipse'
+
+group 'de.abas.restapi.client'
 version '1.0-SNAPSHOT'
 
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	group 'de.abas.restapi.client'
+	version '1.0-SNAPSHOT'
+	sourceCompatibility = 1.8
+
+	repositories {
+		mavenCentral()
+	}
+}

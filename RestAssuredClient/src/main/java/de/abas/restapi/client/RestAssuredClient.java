@@ -5,7 +5,7 @@
  * <p>
  * (C) Copyright abas Software AG, Karlsruhe, Germany; 2015
  */
-package de.abas.mw.client;
+package de.abas.restapi.client;
 
 import static com.jayway.restassured.RestAssured.with;
 

@@ -1,4 +1,4 @@
-package de.abas.mw.client
+package de.abas.restapi.client
 
 import groovy.json.JsonOutput
 import groovyx.net.http.HttpResponseDecorator

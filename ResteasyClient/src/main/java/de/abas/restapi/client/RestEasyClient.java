@@ -1,12 +1,12 @@
-package de.abas.mw.client;
+package de.abas.restapi.client;
 
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.jboss.resteasy.client.jaxrs.ProxyBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
-import de.abas.mw.client.model.Customer;
-import de.abas.mw.client.model.CustomerList;
+import de.abas.restapi.client.model.Customer;
+import de.abas.restapi.client.model.CustomerList;
 
 public class RestEasyClient {
 

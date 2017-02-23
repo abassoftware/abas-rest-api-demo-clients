@@ -1,4 +1,4 @@
-rootProject.name = 'middleware-demo-clients'
+rootProject.name = 'abas-rest-api-demo-clients'
 
 include 'GroovyRESTClient'
 include 'RestAssuredClient'

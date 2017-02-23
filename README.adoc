@@ -1,7 +1,7 @@
-= middleware-demo-clients
+= abas REST API Demo Clients
 
 
-Demonstration of how you can use the abas Middleware.
+Demonstration of how you can use the abas REST API.
 
 
 == Prerequisites
@@ -32,7 +32,7 @@ downloads all external dependencies and compiles all projects.
 
 == The Example Projects
 
-Currently, there are three small projects demonstrating how you can use aspects of the Middleware's RESTful API.
+Currently, there are three small projects demonstrating how you can use aspects of the abas REST API.
 
 === GroovyRESTClient
 

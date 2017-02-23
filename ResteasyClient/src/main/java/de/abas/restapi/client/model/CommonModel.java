@@ -1,4 +1,4 @@
-package de.abas.mw.client.model;
+package de.abas.restapi.client.model;
 
 import com.jayway.jsonpath.DocumentContext;
 
