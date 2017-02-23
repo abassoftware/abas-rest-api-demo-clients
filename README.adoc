@@ -38,7 +38,7 @@ Currently, there are three small projects demonstrating how you can use aspects 
 
 Uses https://github.com/jgritman/httpbuilder/wiki/RESTClient[`groovyx.net.http.RESTClient`] to send HTTP
 requests to the RESTful web services. The connection is established in
-`de.abas.mw.client.Utils#createClient()`. Find and modify connection properties there.
+`de.abas.restapi.client.Utils#createClient()`. Find and modify connection properties there.
 
 There are two examples in this project:
 
@@ -62,7 +62,7 @@ all state transitions. Only the initial URL for creating the opportunity is hard
 Uses https://github.com/jayway/rest-assured[`com.jayway.restassured.RestAssured`] Java API to send HTTP
 requests to the RESTful web services and parse the responses.
 
-There is just a small `main()` method in `de.abas.mw.client.RestAssuredClient` that demonstrates how you
+There is just a small `main()` method in `de.abas.restapi.client.RestAssuredClient` that demonstrates how you
 can query customers using the RestAssured client API.
 
 === ResteasyClient
@@ -71,7 +71,7 @@ Uses the https://docs.jboss.org/resteasy/docs/3.0-beta-2/userguide/html/RESTEasy
 to create client-side Java proxies for a customer object and a list of customers. For parsing the responses
 https://github.com/jayway/JsonPath[JsonPath] is used.
 
-The main class is `de.abas.mw.client.RestEasyClient`. Here, the connection is established and the results
-are printed. The entry URL and HTTP methods are defined in `de.abas.mw.client.Customers` using javax annotations.
-Model classes in package `de.abas.mw.client.model` define which fields are queried and where their values
+The main class is `de.abas.restapi.client.RestEasyClient`. Here, the connection is established and the results
+are printed. The entry URL and HTTP methods are defined in `de.abas.restapi.client.Customers` using javax annotations.
+Model classes in package `de.abas.restapi.client.model` define which fields are queried and where their values
 can be found within the response's JSON structure.
