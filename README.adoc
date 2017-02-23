@@ -51,7 +51,7 @@ prints fields `nummer`, `such`, `sucherw`, the object's `rowCount` and its locat
 
 Creates a new opportunity (object in `obj/data/3:30`) within the user's workspace using filters for head
 and table fields. Then it sets some field values, inserts a row and prints the result. Next, the editor
-is committed and the correspondig working set is closed. Finally the URL for the now "latest-version" is
+is committed and the corresponding working set is closed. Finally the URL for the now "latest-version" is
 printed.
 
 The example makes use of https://en.wikipedia.org/wiki/HATEOAS[HATEOAS] to find the right resources for
