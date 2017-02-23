@@ -15,7 +15,7 @@ public class RestEasyClient {
 		String host = "localhost";
 		int port = 8080;
 		final ResteasyClient client = ClientCreator.createClientWithBasicAuthentication(host, port, new UsernamePasswordCredentials("", "sy"));
-		final ResteasyWebTarget target = client.target("http://" + host + ":" + port + "/mw/r/roh@vm-crest");
+		final ResteasyWebTarget target = client.target("http://" + host + ":" + port + "/mw/r/erp");
 
 		final Customers customers = ProxyBuilder.builder(Customers.class, target).build();
 

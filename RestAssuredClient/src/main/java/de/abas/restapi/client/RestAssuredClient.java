@@ -22,7 +22,7 @@ public class RestAssuredClient {
                 auth().basic("", "sy").
                 parameter("criteria", "such=S!S").
                 parameter("limit", "3").
-                get("http://localhost:8080/mw/r/roh@vm-crest/obj/data/0:1");
+                get("http://localhost:8080/mw/r/erp/obj/data/0:1");
         final List<Map<String, Object>> customerList = response.then().extract().path("content.data.erpDataObjects");
         for (final Map<String, Object> customer : customerList) {
             System.out.println("--------------------------------------");
