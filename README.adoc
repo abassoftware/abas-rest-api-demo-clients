@@ -75,3 +75,19 @@ The main class is `de.abas.restapi.client.RestEasyClient`. Here, the connection 
 are printed. The entry URL and HTTP methods are defined in `de.abas.restapi.client.Customers` using javax annotations.
 Model classes in package `de.abas.restapi.client.model` define which fields are queried and where their values
 can be found within the response's JSON structure.
+
+=== ProductFX
+
+Like the ResteasyClient this small application uses the https://docs.jboss.org/resteasy/docs/3.0-beta-2/userguide/html/RESTEasy_Client_Framework.html[RESTEasy Client Framework]
+to create client-side Java proxies.
+
+To run the JavaFX User Interface follow these steps:
+
+* Enter your connection data into: `src/main/java/de/abas/restapi/client/ConnectionData.java`
+* Choose your language in: `src/main/java/de/abas/restapi/client/I18N.java` by setting the constant `LANG` an appropriate value
+* Run the application: `./gradlew ProductFX:run`
+
+===== Usage:
+
+* Enter a product number and press TAB (or use a barcode scanner)
+* The product information will be loaded from the abas REST API

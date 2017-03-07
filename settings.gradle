@@ -3,4 +3,4 @@ rootProject.name = 'abas-rest-api-demo-clients'
 include 'GroovyRESTClient'
 include 'RestAssuredClient'
 include 'ResteasyClient'
-
+include 'ProductFX'

@@ -1,0 +1,52 @@
+#main {
+	-fx-background-color: #2a3539;
+	-fx-font-size: 1.5em;
+}
+
+#headerContent {
+	-fx-background-color: #2a3539;
+}
+
+#leftContent {
+	-fx-background-color: #cbccce;
+}
+
+#mainContent {
+	-fx-background-color: #ffffff;
+}
+
+#bottomContent {
+	-fx-background-color: #ffb60f;
+	-fx-text-fill: #2a3539;
+	-fx-font-weight: bold;
+	-fx-padding: 10;
+}
+
+.combo-box {
+	-fx-pref-width: 250px;
+}
+
+#headerTextfield {
+	-fx-pref-height: 80px;
+	-fx-pref-width: 300px;
+	-fx-font-size: 2em;
+	-fx-padding: 8px;
+	-fx-alignment: center-right;
+}
+
+#headerImageBarcode {
+	-fx-background-color: #ffffff;
+	-fx-padding: 2px 8px 2px 8px;
+}
+
+
+
+.text-field:disabled {
+	-fx-opacity: 1.0;
+}
+.text-area:disabled {
+	-fx-opacity: 1.0;
+}
+.table-view:disabled {
+	-fx-opacity: 1.0;
+}

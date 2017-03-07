@@ -1,0 +1,37 @@
+group 'de.abas.restapi.client'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+mainClassName = "de.abas.restapi.client.fx.ProductFX"
+
+repositories {
+    mavenCentral()
+    flatDir {
+       name "lib"
+       dirs "${rootDir}/lib"
+    }
+}
+
+dependencies {
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.13.Final'
+    compile 'org.jboss.resteasy:resteasy-client:3.0.13.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.13.Final'
+    compile 'org.jboss.resteasy:resteasy-jackson2-provider:3.0.13.Final'
+	compile 'com.jayway.jsonpath:json-path:2.0.0'
+	compile 'net.sf.barcode4j:barcode4j:2.0'
+    compile fileTree(dir: rootProject.file('lib'), include: 'de.abas.mw.model-0.28.0-SNAPSHOT.jar')
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'de.abas.restapi.client.fx.ProductFX'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
